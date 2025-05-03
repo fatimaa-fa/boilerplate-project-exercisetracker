@@ -17,19 +17,19 @@ app.use(express.static('public'))
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+ userSchema = new Schema({
   username: { type: String, required: true }
 });
 
-const exerciseSchema = new Schema({
+ exerciseSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   description: { type: String, required: true },
   duration: { type: Number, required: true },
   date: { type: Date, default: Date.now }
 });
 
-const User = mongoose.model('User', userSchema);
-const Exercise = mongoose.model('Exercise', exerciseSchema);
+ User = mongoose.model('User', userSchema);
+ Exercise = mongoose.model('Exercise', exerciseSchema);
 
 
 
